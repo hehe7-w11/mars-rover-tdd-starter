@@ -15,10 +15,17 @@ public class MarsRover {
                 case 'M':
                     moveForward();
                     break;
+                case 'L':
+                    direction = direction.turnLeft();
+                    break;
+                case 'R':
+                    direction = direction.turnRight();
+                    break;
                 case 'B':
                     moveBackward();
                     break;
                 default:
+                    // 可在拓展目标中处理无效命令，此处简单抛出异常
                     throw new IllegalArgumentException("Invalid command: " + cmd);
             }
         }
@@ -29,6 +36,15 @@ public class MarsRover {
             case N:
                 y++;
                 break;
+            case E:
+                x++;
+                break;
+            case S:
+                y--;
+                break;
+            case W:
+                x--;
+                break;
         }
     }
 
@@ -36,6 +52,15 @@ public class MarsRover {
         switch (direction) {
             case N:
                 y--;
+                break;
+            case E:
+                x--;
+                break;
+            case S:
+                y++;
+                break;
+            case W:
+                x++;
                 break;
         }
     }

@@ -16,4 +16,18 @@ public class MarsRoverTest {
         rover.execute("B");
         assertEquals("(0, -1) N", rover.report());
     }
+
+    @Test
+    void testTurnLeft() {
+        MarsRover rover = new MarsRover(0, 0, Direction.N);
+        rover.execute("L");
+        assertEquals("(0, 0) W", rover.report());
+    }
+
+    @Test
+    void testTurnRight() {
+        MarsRover rover = new MarsRover(0, 0, Direction.N);
+        rover.execute("R");
+        assertEquals("(0, 0) E", rover.report());
+    }
 }
