@@ -9,4 +9,11 @@ public class MarsRoverTest {
         rover.execute("M");
         assertEquals("(0, 1) N", rover.report());
     }
+
+    @Test
+    void test_MoveBackward() {
+        MarsRover rover = new MarsRover(0, 0, Direction.N);
+        rover.execute("B");
+        assertEquals("(0, -1) N", rover.report());
+    }
 }
